@@ -3,20 +3,23 @@ import { run } from '@grammyjs/runner';
 import dotenv from 'dotenv';
 import logger from './utils/logger';
 import { startCommand, helpCommand, aboutCommand } from './handlers/commands';
+import { BotContext, SessionData } from './types/session';
 
 // Load environment variables
 dotenv.config();
 
-// Create bot instance
-const bot = new Bot(process.env.TELEGRAM_BOT_TOKEN || '');
+// Create bot instance with proper typing
+const bot = new Bot<BotContext>(process.env.TELEGRAM_BOT_TOKEN || '');
 
 // Error handling
 bot.catch((err) => {
     logger.error('Bot error:', err);
 });
 
-// Session middleware
-bot.use(session());
+// Session middleware with proper typing
+bot.use(session({
+    initial: (): SessionData => ({})
+}));
 
 // Command handlers
 bot.command('start', startCommand);

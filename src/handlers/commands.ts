@@ -1,7 +1,8 @@
-import { Context, InlineKeyboard } from 'grammy';
+import { InlineKeyboard } from 'grammy';
 import logger from '../utils/logger';
+import { BotContext } from '../types/session';
 
-export async function startCommand(ctx: Context) {
+export async function startCommand(ctx: BotContext) {
     try {
         const keyboard = new InlineKeyboard()
             .text('Help', 'help')
@@ -18,7 +19,7 @@ export async function startCommand(ctx: Context) {
     }
 }
 
-export async function helpCommand(ctx: Context) {
+export async function helpCommand(ctx: BotContext) {
     try {
         const helpText = `
 Available commands:
@@ -38,7 +39,7 @@ You can also use the inline keyboard buttons below.`;
     }
 }
 
-export async function aboutCommand(ctx: Context) {
+export async function aboutCommand(ctx: BotContext) {
     try {
         const aboutText = `
 🤖 BBGG Bot Information:

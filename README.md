@@ -22,7 +22,7 @@ npm install
 
 2. Create a `.env` file in the root directory and add your bot token:
 ```
-BOT_TOKEN=your_bot_token_here
+TELEGRAM_BOT_TOKEN=your_TELEGRAM_BOT_TOKEN_here
 ```
 
 3. Build the project:
