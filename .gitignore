@@ -1,0 +1,13 @@
+# Ignore .env files containing sensitive keys
+.env
+
+# Ignore node_modules (not relevant to your keys but keeps the repo clean)
+node_modules/
+
+# Ignore build and dist directories
+dist/
+build/
+
+# Ignore temporary files and logs
+*.log
+*.tmp
