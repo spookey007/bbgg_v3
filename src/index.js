@@ -19,7 +19,7 @@ const logger = winston.createLogger({
 });
 
 // Create bot instance with polling
-const bot = new TelegramBot(process.env.TELEGRAM_TELEGRAM_BOT_TOKEN, {
+const bot = new TelegramBot(process.env.TELEGRAM_BOT_TOKEN, {
     polling: {
         interval: 300,
         autoStart: true,
